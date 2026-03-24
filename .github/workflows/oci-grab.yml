@@ -2,7 +2,7 @@ name: OCI Grab Instance
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/5 * * * *' # Runs every 5 minutes
   workflow_dispatch:
 
 jobs:
@@ -39,5 +39,5 @@ jobs:
           OCI_SHAPE: VM.Standard.A1.Flex
           OCI_OCPUS: 4
           OCI_MEMORY_IN_GBS: 24
-                OCI_SSH_PUBLIC_KEY: ${{ secrets.OCI_SSH_PUBLIC_KEY }}
+          OCI_SSH_PUBLIC_KEY: ${{ secrets.OCI_SSH_PUBLIC_KEY }}
         run: php index.php
